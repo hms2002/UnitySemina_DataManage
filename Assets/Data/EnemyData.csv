@@ -1,0 +1,4 @@
+ID,DisplayName,MaxHp,MoveSpeed,AttackPower
+slime,슬라임,50,2,5
+orc,오크,120,1.5,15
+dragon,드래곤,10,3,50
