@@ -60,4 +60,28 @@ public static class EnemyDataImporter
 
         Debug.Log("EnemyData Import 완료!");
     }
+
+    [MenuItem("Tools/Import EnemyDataa")]
+    public static void Importt()
+    {
+
+        // 출력 폴더 없으면 만들기
+        if (!AssetDatabase.IsValidFolder(OutputFolder))
+        {
+            AssetDatabase.CreateFolder("Assets/Data", "EnemyAssets");
+        }
+
+        //  에셋 경로 (id 기준 이름)
+        string assetPath = $"{OutputFolder}/Monster.asset";
+
+        EnemyData data = ScriptableObject.CreateInstance<EnemyData>();
+        AssetDatabase.CreateAsset(data, assetPath);
+    
+
+    // 저장
+        AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
+
+        Debug.Log("EnemyData Import 완료!");
+    }
 }
